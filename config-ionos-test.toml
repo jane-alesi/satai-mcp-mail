@@ -1,0 +1,32 @@
+# IONOS Test Configuration for satware® AI
+# Location: ~/.config/zerolib/mcp_email_server/config-ionos-test.toml
+
+[[emails]]
+account_name = "ionos_test_account"
+full_name = "satware® AI Test"
+email_address = "test@satware.ai"  # Replace with actual IONOS email
+description = "IONOS compatibility testing account"
+created_at = "2025-06-14T13:00:00"
+
+[emails.incoming]
+user_name = "test@satware.ai"  # Full IONOS email address
+password = "your-ionos-password"  # Use environment variable in production
+host = "imap.ionos.com"
+port = 993
+use_ssl = true
+start_ssl = false
+
+[emails.outgoing]
+user_name = "test@satware.ai"  # Same as incoming
+password = "your-ionos-password"  # Use environment variable in production
+host = "smtp.ionos.com"
+port = 587
+use_ssl = false
+start_ssl = true
+
+# Alternative SMTP configuration (SSL on port 465)
+# [emails.outgoing]
+# host = "smtp.ionos.com"
+# port = 465
+# use_ssl = true
+# start_ssl = false
